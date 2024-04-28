@@ -1,0 +1,31 @@
+.route-records{
+    display: flex;
+    flex-direction: column;
+
+    .past-queries{
+        color: var(--text);
+        text-decoration: none;
+        h2{
+            text-align: center;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            li{
+                font-size: 1rem ;
+                padding: 2rem;
+                text-decoration: none;
+                list-style: none;
+                border: 2px solid var(--secondary);
+                border-radius: 1rem;
+                margin-bottom: 1rem;
+                width: 90%;
+            }
+        }
+
+    }
+}
