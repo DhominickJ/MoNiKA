@@ -19,8 +19,8 @@ export default class Router {
     }
 
     setDefaults() {
-        // if (window.location.hash !== "#")
-        //     window.location.hash = "#"
+        if (window.location.hash !== "#")
+            window.location.hash = "#"
     }
 
     init() {
