@@ -1,10 +1,10 @@
 :root {
   font-family: 'Poppins', sans-serif;
 
-  --primary: #e56999;
-  --secondary: #9601aa;
-  --accent: #003392;
-  --text: rgba(255, 255, 255, 0.76);
+  --primary: #f19fa3;
+  --secondary: #194F92;
+  --accent: #194F92;
+  --text: #e4e4e4;
 
   --warning: goldenrod;
   --error: crimson;
@@ -42,7 +42,7 @@ header {
 main {
   flex-grow: 1;
 
-  video {
+  .video {
     max-width: 100%;
   }
 }

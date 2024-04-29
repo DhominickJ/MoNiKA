@@ -1,18 +1,29 @@
 main.route-home {
   section.status-icons {
-    display: grid;
-    flex-wrap: wrap;
+    display: flex;
+    // flex-wrap: wrap;
     justify-items: center;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
 
     #status-level {
       fill: var(--primary);
-      background-color: var(--secondary);
+      background-color: var(--primary);
       border-radius: 10px;
 
-      padding: 1rem;
+      padding: .5rem;
 
       display: flex;
+
       align-items: center;
+
+      i {
+        font-size: 1.8rem;
+        color: var(--error);
+        font-weight: 800;
+      }
+
     }
 
     .status-components {
@@ -74,7 +85,9 @@ main.route-home {
     margin: 1rem;
 
     p {
-      color: var(--accent);
+      color: var(--text);
+      font-size: 1.2rem;
+      text-align: center;
     }
     input {
       width: 90%;
@@ -97,7 +110,8 @@ main.route-home {
     flex-direction: column;
 
       p{
-        font-size: 1rem;
+        font-size: 1.2rem;
+        font-weight: 800;
         color: var(--text);
         text-align: center;
         // background-color: none;
