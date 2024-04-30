@@ -109,6 +109,10 @@ main.route-home {
   padding-right: 0;
   width: 100%;
 
+  .video{
+    width: 100%;
+  }
+
   section.status-icons {
     display: flex;
     // flex-wrap: wrap;
