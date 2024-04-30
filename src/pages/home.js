@@ -41,7 +41,7 @@ export default function home() {
 
         .then(response => response.json())
         .then(data => {
-            output.innerHTML = data.classification;
+            output.innerHTML = data.classification.toUpperCase();
         })
         .catch(error => {
             console.error('Error:', error);
