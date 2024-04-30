@@ -1,14 +1,14 @@
 {
     "name": "MONIKA",
     "short_name": "MONIKA",
-    "start_url": ".",
+    "start_url": "./#",
     "display": "standalone",
     "background_color": "#bf453f",
     "description": "Your own companion in your phone :)",
     "icons": [
       {
         "src": "/assets/monika.gif",
-        "sizes": "48x48",
+        "sizes": "72x72",
         "type": "image/png"
       }
     ]
