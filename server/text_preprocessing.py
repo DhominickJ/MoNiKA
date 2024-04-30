@@ -13,6 +13,10 @@ nltk.download('punkt')
 ```
 """
 
+#Downloading the damn stopwords and punkt
+nltk.download('stopwords')
+nltk.download('punkt')
+
 def clean_text(text):
     # If input is a list of strings, join them into a single string
     if isinstance(text, list):
