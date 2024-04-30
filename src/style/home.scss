@@ -234,7 +234,6 @@ main.route-home {
         align-items: center;
         justify-items: center;
         align-self: center;
-      }
 
       input{
         width: 100%;
@@ -260,11 +259,11 @@ main.route-home {
         // margin: 1rem;
         align-self: center;
         font-size: 1rem;
-        padding: 0.5rem;
+        // padding: 0.5rem;
         border-radius: 10px;
         background-color: transparent;
         border: 5px solid var(--secondary);
-        margin-top: 1rem;
+        margin-top: -1rem;
         color: var(--text);
         font-weight: 500;
       }
@@ -278,7 +277,8 @@ main.route-home {
         font-size: 1rem;
         color: var(--text);
       }
-  } 
-}
-}
+        }
+      } 
+    }
+  }
 }
