@@ -1,7 +1,7 @@
 {
     "name": "MONIKA",
     "short_name": "MONIKA",
-    "start_url": "./#",
+    "start_url": "https://monika-khaki.vercel.app",
     "display": "standalone",
     "background_color": "#bf453f",
     "description": "Your own companion in your phone :)",
