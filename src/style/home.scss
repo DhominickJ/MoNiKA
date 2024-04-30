@@ -104,6 +104,11 @@ main.route-home {
 
 
 @media screen and (max-width: 800px){
+.main{
+  display: block;
+  padding-right: 0;
+  width: 100%;
+
   section.status-icons {
     display: flex;
     // flex-wrap: wrap;
@@ -189,6 +194,7 @@ main.route-home {
     padding: 0.2rem;
     margin: 0.5rem;
     font-weight: 800;
+    width: 95%;
 
     p {
       color: var(--text);
@@ -267,5 +273,6 @@ main.route-home {
         color: var(--text);
       }
   } 
+}
 }
 }
