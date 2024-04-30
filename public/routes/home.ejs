@@ -17,12 +17,16 @@
     </div>
 </section>
 <section class="nameplate">
-    <p>Hi! My name is</p>
+    <p>EMOTION</p>
     <!-- <h2 id="name"></h2> -->
-    <input name="input" id="name" cols="10" rows="3"></input>
+    <h2 id="output">Hello</h2>
 </section>
 <section class="text-input">
-    <p> Input Queries Here: </p>
-    <textarea name="query" id="query" cols="10" rows="3"></textarea>
-    <button id="submit-query"> Submit </button>
+    <form action="submit" id="textForm">
+        <p>Custom Server:</p>
+        <input type="text" name="server" id="server">
+        <p> Input Queries Here: </p>
+        <textarea name="query" id="query" cols="10" rows="3"></textarea>
+        <button type="submit">Submit</button>
+    </form>
 </section>

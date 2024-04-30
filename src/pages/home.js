@@ -19,32 +19,36 @@ import { InferenceSession, Tensor } from 'onnxruntime-web';
 // }
 
 export default function home() {
+  document.getElementById('textForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    const textInput = document.getElementById('query').value;
+    const custom_serv = document.getElementById('server').value;
+    const output = document.getElementById('output');
+    let ipaddress = '';
+    if (!custom_serv){
+        ipaddress = 'localhost';
+    } else {
+        ipaddress = custom_serv;
+    }
+    if (textInput) {
+        fetch('http://' + ipaddress +':5000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ text: textInput }),
+        })
 
-    async function predictEmotion(text) {
-      
-        // Create an ORT session
-        const session = await InferenceSession.create('/model/monika.with_runtime_opt.ort', {executionProviders: ['webgl']});
-      
-        // Create input data tensor (assuming float32 input)
-        const inputData = new Float32Array(text);
-        const input = new Tensor(inputData, 'float32', [1, preprocessedText.length]); // Adjust dimensions if needed
-      
-        // Run inference
-        const outputData = await session.run(input);
-      
-        // Extract the predicted emotion (highest probability index)
-        const probabilities = outputData[0].data;
-        const predictedEmotionIndex = probabilities.indexOf(Math.max(...probabilities));
-      
-        // Map the predicted index to an emotion label (assuming you have a mapping)
-        const emotions = ['angry', 'happy', 'sad', 'love', 'surprise', 'fear'];
-        const predictedEmotion = emotions[predictedEmotionIndex];
-      
-        return predictedEmotion;
+        .then(response => response.json())
+        .then(data => {
+            output.innerHTML = data.classification;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            output.innerHTML = 'An error occurred.';
+        });
+    } else {
+        output.innerHTML = 'Please enter some text.';
       }
-      
-      // Example usage
-      const preprocessedText = "I feel very frustrated!"; // Replace with actual preprocessing logic
-      const predictedEmotion = predictEmotion(preprocessedText);
-      console.log("Predicted emotion:", predictedEmotion); // Output might be angry
-}
+    });
+  }

@@ -18,11 +18,12 @@ def predict():
         return jsonify({'error': 'No text field'}), 400
 
     input_text = data['text']
+    print(input_text)
     try:
         predicted_emotion = predict_emotion(classifier, vectorizer, input_text)
         return jsonify({'classification': predicted_emotion})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
+    
 if __name__ == '__main__':
     app.run(debug=True)

@@ -17,9 +17,7 @@
     "@phosphor-icons/web": "^2.1.1",
     "@tensorflow/tfjs": "^4.18.0",
     "animejs": "^3.2.2",
-    "onnxruntime": "^1.7.0",
     "onnxruntime-node": "^1.17.3-rev.1",
-    "onnxruntime-web": "^1.17.3",
     "project": ".",
     "scikitjs": "^1.24.0",
     "vercel": "^34.1.3"
