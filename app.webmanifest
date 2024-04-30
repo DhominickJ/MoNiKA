@@ -8,7 +8,7 @@
     "icons": [
       {
         "src": "/assets/monika.gif",
-        "sizes": "72x72",
+        "sizes": "48x48",
         "type": "image/png"
       }
     ]
