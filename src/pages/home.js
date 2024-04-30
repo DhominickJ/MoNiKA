@@ -23,11 +23,11 @@ export default function home() {
     async function predictEmotion(text) {
       
         // Create an ORT session
-        const session = await InferenceSession.create('/model/monika.with_runtime_opt.ort', {executionProviders: ['webgl']});
+        const session = await InferenceSession.create('/model/monika.with_runtime_opt.optimized.onnx', {executionProviders: ['webgl']});
       
         // Create input data tensor (assuming float32 input)
         const inputData = new Float32Array(text);
-        const input = new Tensor(inputData, 'float32', [1, preprocessedText.length]); // Adjust dimensions if needed
+        const input = new Tensor(inputData, 'float32', [1, text.length]); // Adjust dimensions if needed
       
         // Run inference
         const outputData = await session.run(input);
