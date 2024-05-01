@@ -40,6 +40,5 @@ if __name__ == '__main__':
     print('Register Device on https://' + IPAddress + ':' + port)
     print('=============================================')
     app.run(port=port, host='0.0.0.0', ssl_context='adhoc')
-    input('Done? Press Y if yes:')
     print('=============================================')
     
