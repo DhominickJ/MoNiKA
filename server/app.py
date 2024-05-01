@@ -11,7 +11,7 @@ CORS(app) # This will enable CORS for all routes
 classifier = load_classifier('models/emotion-classifier.joblib')
 vectorizer = load_vectorizer('models/vectorizer.joblib')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def predict():
     data = request.get_json()
     if 'text' not in data:
