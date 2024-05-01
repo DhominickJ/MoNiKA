@@ -31,7 +31,7 @@ export default function home() {
         ipaddress = custom_serv;
     }
     if (textInput) {
-        fetch('http://' + ipaddress +':5000/predict', {
+        fetch('http://' + ipaddress +':6969/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
