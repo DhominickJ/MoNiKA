@@ -3,6 +3,8 @@ from flask_cors import CORS
 from text_preprocessing import clean_text
 from model_loading import load_classifier, load_vectorizer
 from emotion_prediction import predict_emotion
+import socket
+import os
 
 app = Flask(__name__)
 CORS(app) # This will enable CORS for all routes
@@ -30,4 +32,14 @@ def get():
     return jsonify({'error': 'Activation of local certificates'}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=6969, host='0.0.0.0', ssl_context='adhoc')
+    os.system('cls' if os.name == 'nt' else 'clear')
+    port = '6969'
+    IPAddress = socket.gethostbyname(socket.gethostname())
+    print('\n\n\n=============================================')
+    print('Starting server...')
+    print('Register Device on https://' + IPAddress + ':' + port)
+    print('=============================================')
+    input('Done? Press Y if yes:')
+    print('=============================================')
+    app.run(port=port, host='0.0.0.0', ssl_context='adhoc')
+    
