@@ -33,7 +33,7 @@ export default function home() {
     }
     if (textInput) {
         fetch('https://' + ipaddress +':6969/predict', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },

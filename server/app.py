@@ -11,7 +11,7 @@ CORS(app) # This will enable CORS for all routes
 classifier = load_classifier('models/emotion-classifier.joblib')
 vectorizer = load_vectorizer('models/vectorizer.joblib')
 
-@app.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
     if 'text' not in data:
@@ -24,6 +24,10 @@ def predict():
         return jsonify({'classification': predicted_emotion})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    
+
+@app.route('/', methods=['GET'])
+def get():
+    return jsonify({'error': 'Activation of local certificates'}), 200
+
 if __name__ == '__main__':
     app.run(debug=True, port=6969, host='0.0.0.0', ssl_context='adhoc')
