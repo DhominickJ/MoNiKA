@@ -29,9 +29,10 @@ export default function home() {
         ipaddress = 'localhost';
     } else {
         ipaddress = custom_serv;
+        console.log(ipaddress)
     }
     if (textInput) {
-        fetch('http://' + ipaddress +':6969/predict', {
+        fetch('https://' + ipaddress +':6969/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

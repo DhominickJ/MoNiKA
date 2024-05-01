@@ -2,3 +2,4 @@ flask-cors
 nltk
 joblib
 scikit-learn
+pyopenssl
