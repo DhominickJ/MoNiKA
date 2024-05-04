@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from flask_cors import CORS
 from text_preprocessing import clean_text
 from model_loading import load_classifier, load_vectorizer
@@ -29,7 +29,7 @@ def predict():
 
 @app.route('/', methods=['GET'])
 def get():
-    return jsonify({'error': 'Activation of local certificates'}), 200
+    return redirect('https://monika-khaki.vercel.app/', code=302)
 
 if __name__ == '__main__':
     os.system('cls' if os.name == 'nt' else 'clear')
