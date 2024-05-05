@@ -13,6 +13,11 @@ CORS(app) # This will enable CORS for all routes
 classifier = load_classifier('models/emotion-classifier.joblib')
 vectorizer = load_vectorizer('models/vectorizer.joblib')
 
+@app.route('/server', methods=['POST'])
+def server():
+    IPAddress = socket.gethostbyname(socket.gethostname())
+    return IPAddress
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
@@ -38,6 +43,8 @@ if __name__ == '__main__':
     print('\n\n\n=============================================')
     print('Starting server...')
     print('Register Device on https://' + IPAddress + ':' + port)
+    print('=============================================')
+    print('Enter this on the server address on the app: ' + IPAddress)
     print('=============================================')
     app.run(port=port, host='0.0.0.0', ssl_context='adhoc')
     print('=============================================')
