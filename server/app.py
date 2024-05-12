@@ -38,7 +38,7 @@ def get():
 
 if __name__ == '__main__':
     os.system('cls' if os.name == 'nt' else 'clear')
-    port = '6969'
+    port = '2102'
     IPAddress = socket.gethostbyname(socket.gethostname())
     print('\n\n\n=============================================')
     print('Starting server...')
